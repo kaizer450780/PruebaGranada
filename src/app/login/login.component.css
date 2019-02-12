@@ -1,0 +1,25 @@
+form{
+    text-align: center;
+    padding-top: 50px;
+    
+}
+
+label {
+    
+    width: 200px;
+    
+}
+
+h1{
+    text-align: center;
+    padding-top: 100px;
+}
+
+.user{
+    padding-right: 50px;
+    
+}
+
+.password{
+    padding-right: 32px;
+}
