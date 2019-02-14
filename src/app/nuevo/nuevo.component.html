@@ -1,0 +1,37 @@
+
+  <h1>CORREO NUEVO</h1>
+
+<div class="container">
+  <form class='justify-content-center' [formGroup]='form' (ngSubmit)='enviar()'>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon3">Asunto: </span>
+      </div>
+      <input type="text" name='subject' formControlName='subject' class="form-control" id="basic-url" aria-describedby="basic-addon3">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon3">Destinatario:</span>
+      </div>
+      <input type="text" name='receiver' formControlName='receiver' class="form-control" id="basic-url" aria-describedby="basic-addon3">
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Descripcion</span>
+      </div>
+      <textarea class="form-control" name='description' formControlName='description' aria-label="With textarea"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-secondary mt-5">Enviar</button>
+
+    <div *ngIf="mensaje == 1" class="alert alert-warning mt-3" role="alert">
+        Este correo es invalido, revisa los campos.
+      </div>
+
+    <div *ngIf="mensaje == 2" class="alert alert-success mt-3" role="alert">
+        El correo se ha enviado exitosamente.
+    </div>
+  </form>
+</div>

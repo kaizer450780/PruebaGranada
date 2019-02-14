@@ -1,18 +1,3 @@
-div{
-    float: left;
-}
-li{
-    padding-top: 50px;
-}
-ul{
-    padding-top: 100px;
-}
-table{
-    float: left;
-    border: 10px;
-    height: 870px;
-    background-color: aqua;
-}
-.bandeja{
-    align-content: center;
+.check{
+    text-align: center;
 }

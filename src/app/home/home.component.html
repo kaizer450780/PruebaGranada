@@ -1,13 +1,34 @@
+
 <div class="container">
-  <table  width="220" cellspacing="1" cellpadding="3"> 
-    <ul >
-        <li>bandeja de entrada</li>
-        <li>enviados</li>
-        <li>eliminados</li>
-        <li>Nuevo</li>
-    </ul>
-  </table>  
-</div> 
+      <div class="input-group mb-4 mt-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Buscar</span>
+          </div>
+          <input type="text" placeholder="Asunto" [(ngModel)]="filter" (keyup)="busqueda()" name="word" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
 
+        
+  <table class="table">
+    <thead class="thead-dark text-center">
+      <tr>
+        <th scope="col">Favorito</th>
+        <th scope="col">Asunto</th>
+        <th scope="col">Destinatario</th>
+        <th scope="col">Fecha de envio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of posts  | fieldName:'created_date'">
+        <td class="check"><input type="checkbox"  (change)="checkValue(post.id)"></td>
+        <td>{{post.subject}}</td>
+        <td>{{post.sender}}</td>
+        <td>{{post.created_date | date}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-secondary mt-4" (click)='delete()' [disabled]='disable' >Eliminar</button>
 
-
+  <div *ngIf="mensaje == 1" class="alert alert-success mt-3" role="alert">
+      Sus mensajes se eliminaron satisfactoriamente, puede verlos en su bandeja de eliminados.
+  </div>
+</div>

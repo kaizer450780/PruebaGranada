@@ -1,0 +1,20 @@
+
+<div class="container">
+      
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Asunto</th>
+      <th scope="col">Destinatario</th>
+      <th scope="col">Fecha de envio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let elimina of eliminar.eliminados">
+      <td>{{elimina.subject}}</td>
+      <td>{{elimina.sender}}</td>
+      <td>{{elimina.created_date | date}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
